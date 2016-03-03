@@ -55,8 +55,7 @@ class Numbering:
                 # check if number is local to the site
                 if destn[:6] == config['internal_prefix']:
                     return True
-            else:
-                return False
+            return False
         except psycopg2.DatabaseError as e:
             raise NumberingException('Database error checking if number is local:' % e )
 
